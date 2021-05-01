@@ -17,7 +17,6 @@ const App = ()=>{
         };
         wsClient.onmessage = msg=>{
             let resp = JSON.parse(msg.data);
-            console.log(resp);
             switch (resp.type)
             {
                 case 'ERROR':
@@ -51,7 +50,8 @@ const App = ()=>{
         <div className="App">
             <h1>Workspaces</h1>
             <form onSubmit={registerForEvent}>
-                <input type="text" value={eventId} onChange={onEventIdChange} placeholder="Event ID" />
+                <input type="text" value={eventId} onChange={onEventIdChange}
+                    placeholder="Event ID" />
                 <input type="submit" value="Subscribe" />
             </form>
             {workspaces.map((w, i)=>{

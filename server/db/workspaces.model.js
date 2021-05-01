@@ -6,7 +6,7 @@ const EventEmitter = require('events');
 /**
  * Workspaces are stored in-memory for the sake of the exercise,
  * instead of querying from DB.
- * Extends EventEmitter so we can send events upon change to data source.
+ * Extends EventEmitter so we can listen to events upon change to data source.
  * 
  * We emit a general 'change' event for event listeners, and classify the changes
  * by flag.
